@@ -48,7 +48,12 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge create --rpc-url <your_rpc_url> --private-key <your_private_key> --constructor-args <your_constructor_argument> --etherscan-api-key <your_etherscan_api_key> --verify src/<your_solidity_script_filename:your_contract_name>
+```
+
+### Verify
+```shell
+$ forge verify-contract <your_contract_address> src/<your_solidity_script_filename:your_contract_name> --chain sepolia --etherscan-api-key <your_etherscan_api_key> --watch --constructor-args <your_constructor_argument_in_ABI_bytecode>
 ```
 
 ### Cast
